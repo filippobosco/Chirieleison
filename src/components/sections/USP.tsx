@@ -28,16 +28,16 @@ export function USP() {
           subtitle="La forza di CV Wealth Partners è nella complementarietà perfetta. Non siamo due consulenti che fanno la stessa cosa. Siamo una task force con competenze che si integrano."
         />
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12 items-stretch">
           {/* Antonio */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="relative h-full"
           >
-            <div className="bg-gradient-to-br from-[var(--navy-950)] to-[var(--navy-800)] rounded-3xl p-8 md:p-10 text-white">
+            <div className="bg-gradient-to-br from-[var(--navy-950)] to-[var(--navy-800)] rounded-3xl p-8 md:p-10 text-white h-full">
               <div className="flex items-center gap-6 mb-6">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--gold-400)] to-[var(--gold-600)] flex items-center justify-center flex-shrink-0">
                   <span className="text-2xl font-bold">AC</span>
@@ -92,9 +92,9 @@ export function USP() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
+            className="relative h-full"
           >
-            <div className="bg-gradient-to-br from-[var(--navy-950)] to-[var(--navy-800)] rounded-3xl p-8 md:p-10 text-white">
+            <div className="bg-gradient-to-br from-[var(--navy-950)] to-[var(--navy-800)] rounded-3xl p-8 md:p-10 text-white h-full">
               <div className="flex items-center gap-6 mb-6">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--gold-400)] to-[var(--gold-600)] flex items-center justify-center flex-shrink-0">
                   <span className="text-2xl font-bold">EV</span>

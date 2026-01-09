@@ -99,70 +99,55 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Founders Images */}
+          {/* Founders Card */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
+            className="relative group"
           >
-            <div className="grid grid-cols-2 gap-6">
-              {/* Antonio */}
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-[var(--gold-400)] to-[var(--gold-500)] rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500" />
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[var(--navy-900)] border-2 border-[var(--gold-400)]/40">
-                  {/* Immagine di Antonio */}
-                  <Image
-                    src="/antonio.png"
-                    alt="Antonio Chirieleison"
-                    fill
-                    className="object-cover"
-                    style={{ objectPosition: "40% center" }}
-                    priority
-                  />
-                  {/* Overlay per coerenza cromatica con i toni del sito */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[var(--navy-900)]/30 via-transparent to-[var(--navy-950)]/90" />
-                  {/* Info overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
-                    <h3 className="text-xl font-bold text-white mb-1 drop-shadow-lg">
-                      Antonio Chirieleison
-                    </h3>
-                    <p className="text-[var(--gold-400)] text-sm font-semibold drop-shadow-md">
-                      Il Rigore e la Protezione
-                    </p>
-                    <p className="text-gray-300 text-xs mt-1 drop-shadow-md">
-                      Ex Ufficiale GdF
-                    </p>
-                  </div>
-                </div>
+            {/* Glow effect */}
+            <div className="absolute -inset-2 bg-gradient-to-r from-[var(--gold-400)] to-[var(--gold-500)] rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition duration-500" />
+            
+            {/* Card container */}
+            <div className="relative bg-gradient-to-br from-[var(--navy-800)] to-[var(--navy-950)] rounded-3xl overflow-hidden border-2 border-[var(--gold-400)]/30">
+              {/* Foto */}
+              <div className="relative aspect-[3/4] w-full">
+                <Image
+                  src="/founders.jpg"
+                  alt="Antonio Chirieleison & Erik Vitali - Fondatori CV Wealth Partners"
+                  fill
+                  className="object-cover"
+                  style={{ objectPosition: "center 25%" }}
+                  priority
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--navy-950)]" />
               </div>
-
-              {/* Erik */}
-              <div className="relative group mt-8">
-                <div className="absolute -inset-1 bg-gradient-to-r from-[var(--gold-400)] to-[var(--gold-500)] rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500" />
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[var(--navy-900)] border-2 border-[var(--gold-400)]/40">
-                  {/* Immagine di Erik */}
-                  <Image
-                    src="/erik.jpeg"
-                    alt="Erik Vitali"
-                    fill
-                    className="object-cover"
-                    style={{ objectPosition: "center 20%" }}
-                    priority
-                  />
-                  {/* Overlay per coerenza cromatica con i toni del sito */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[var(--navy-900)]/30 via-transparent to-[var(--navy-950)]/90" />
-                  {/* Info overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
-                    <h3 className="text-xl font-bold text-white mb-1 drop-shadow-lg">
-                      Erik Vitali
-                    </h3>
-                    <p className="text-[var(--gold-400)] text-sm font-semibold drop-shadow-md">
-                      L&apos;Esperienza e la Strategia
-                    </p>
-                    <p className="text-gray-300 text-xs mt-1 drop-shadow-md">
+              
+              {/* Info section */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                {/* Title */}
+                <h3 className="text-2xl md:text-3xl font-bold text-white text-center mb-2 drop-shadow-lg">
+                  Antonio Chirieleison & Erik Vitali
+                </h3>
+                <p className="text-[var(--gold-400)] text-center font-medium mb-6 drop-shadow-md">
+                  Fondatori CV Wealth Partners
+                </p>
+                
+                {/* Badges */}
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[var(--navy-900)]/80 border border-[var(--gold-400)]/30 backdrop-blur-sm">
+                    <Shield className="w-4 h-4 text-[var(--gold-400)]" />
+                    <span className="text-xs font-semibold text-white">
+                      Ex Ufficiale GdF
+                    </span>
+                  </div>
+                  <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[var(--navy-900)]/80 border border-[var(--gold-400)]/30 backdrop-blur-sm">
+                    <TrendingUp className="w-4 h-4 text-[var(--gold-400)]" />
+                    <span className="text-xs font-semibold text-white">
                       19 anni Private Banking
-                    </p>
+                    </span>
                   </div>
                 </div>
               </div>
