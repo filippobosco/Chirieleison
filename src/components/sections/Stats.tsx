@@ -8,7 +8,7 @@ import { Wallet, Users, Clock, MessageCircle } from "lucide-react";
 const stats = [
   {
     icon: Wallet,
-    value: "€85.000.000+",
+    value: "€85+ mln",
     label: "Patrimoni protetti e valorizzati",
   },
   {

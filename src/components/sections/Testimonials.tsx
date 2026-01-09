@@ -38,7 +38,7 @@ export function Testimonials() {
       <Container>
         <SectionHeading title="Cosa dicono di noi" />
 
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 items-stretch">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -46,7 +46,7 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="relative bg-[var(--gray-50)] rounded-3xl p-6 md:p-8 border border-[var(--gray-200)] hover:border-[var(--gold-300)] hover:shadow-lg transition-all duration-300"
+              className="relative bg-[var(--gray-50)] rounded-3xl p-6 md:p-8 border border-[var(--gray-200)] hover:border-[var(--gold-300)] hover:shadow-lg transition-all duration-300 flex flex-col h-full"
             >
               {/* Quote Icon */}
               <div className="absolute -top-4 left-6 w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--gold-400)] to-[var(--gold-600)] flex items-center justify-center">
@@ -54,12 +54,12 @@ export function Testimonials() {
               </div>
 
               {/* Quote */}
-              <p className="text-[var(--gray-700)] text-lg leading-relaxed italic mt-4 mb-6">
+              <p className="text-[var(--gray-700)] text-lg leading-relaxed italic mt-4 mb-6 flex-grow">
                 &ldquo;{testimonial.quote}&rdquo;
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4 pt-4 border-t border-[var(--gray-200)]">
+              <div className="flex items-center gap-4 pt-4 border-t border-[var(--gray-200)] mt-auto">
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--navy-800)] to-[var(--navy-950)] flex items-center justify-center">
                   <span className="text-sm font-bold text-[var(--gold-400)]">
                     {testimonial.initials}

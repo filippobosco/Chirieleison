@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Shield, TrendingUp, Users, Award } from "lucide-react";
@@ -108,46 +109,60 @@ export function Hero() {
             <div className="grid grid-cols-2 gap-6">
               {/* Antonio */}
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-[var(--gold-500)] to-[var(--gold-600)] rounded-2xl blur-sm opacity-50 group-hover:opacity-75 transition duration-500" />
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-b from-[var(--navy-700)] to-[var(--navy-800)] border border-[var(--gold-500)]/20">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center p-6">
-                      <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[var(--gold-400)] to-[var(--gold-600)] flex items-center justify-center">
-                        <span className="text-3xl font-bold text-white">AV</span>
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-1">
-                        Antonio Vettese
-                      </h3>
-                      <p className="text-[var(--gold-400)] text-sm font-medium">
-                        Il Rigore e la Protezione
-                      </p>
-                      <p className="text-gray-400 text-xs mt-2">
-                        Ex Ufficiale GdF
-                      </p>
-                    </div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-[var(--gold-400)] to-[var(--gold-500)] rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500" />
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[var(--navy-900)] border-2 border-[var(--gold-400)]/40">
+                  {/* Immagine di Antonio */}
+                  <Image
+                    src="/antonio.png"
+                    alt="Antonio Chirieleison"
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: "40% center" }}
+                    priority
+                  />
+                  {/* Overlay per coerenza cromatica con i toni del sito */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[var(--navy-900)]/30 via-transparent to-[var(--navy-950)]/90" />
+                  {/* Info overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
+                    <h3 className="text-xl font-bold text-white mb-1 drop-shadow-lg">
+                      Antonio Chirieleison
+                    </h3>
+                    <p className="text-[var(--gold-400)] text-sm font-semibold drop-shadow-md">
+                      Il Rigore e la Protezione
+                    </p>
+                    <p className="text-gray-300 text-xs mt-1 drop-shadow-md">
+                      Ex Ufficiale GdF
+                    </p>
                   </div>
                 </div>
               </div>
 
               {/* Erik */}
               <div className="relative group mt-8">
-                <div className="absolute -inset-1 bg-gradient-to-r from-[var(--gold-600)] to-[var(--gold-500)] rounded-2xl blur-sm opacity-50 group-hover:opacity-75 transition duration-500" />
-                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-gradient-to-b from-[var(--navy-700)] to-[var(--navy-800)] border border-[var(--gold-500)]/20">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center p-6">
-                      <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[var(--gold-400)] to-[var(--gold-600)] flex items-center justify-center">
-                        <span className="text-3xl font-bold text-white">EV</span>
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-1">
-                        Erik Visentin
-                      </h3>
-                      <p className="text-[var(--gold-400)] text-sm font-medium">
-                        L&apos;Esperienza e la Strategia
-                      </p>
-                      <p className="text-gray-400 text-xs mt-2">
-                        19 anni Private Banking
-                      </p>
-                    </div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-[var(--gold-400)] to-[var(--gold-500)] rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500" />
+                <div className="relative aspect-[3/4] rounded-2xl overflow-hidden bg-[var(--navy-900)] border-2 border-[var(--gold-400)]/40">
+                  {/* Immagine di Erik */}
+                  <Image
+                    src="/erik.jpeg"
+                    alt="Erik Vitali"
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: "center 20%" }}
+                    priority
+                  />
+                  {/* Overlay per coerenza cromatica con i toni del sito */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[var(--navy-900)]/30 via-transparent to-[var(--navy-950)]/90" />
+                  {/* Info overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
+                    <h3 className="text-xl font-bold text-white mb-1 drop-shadow-lg">
+                      Erik Vitali
+                    </h3>
+                    <p className="text-[var(--gold-400)] text-sm font-semibold drop-shadow-md">
+                      L&apos;Esperienza e la Strategia
+                    </p>
+                    <p className="text-gray-300 text-xs mt-1 drop-shadow-md">
+                      19 anni Private Banking
+                    </p>
                   </div>
                 </div>
               </div>

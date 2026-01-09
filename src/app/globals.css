@@ -1,20 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  /* Primary Colors */
-  --navy-950: #0a1628;
-  --navy-900: #0f1e32;
-  --navy-800: #1a2d47;
-  --navy-700: #243d5c;
-  --navy-600: #2e4d71;
+  /* Primary Colors - Blu #2a3e5c */
+  --navy-950: #1a2a3f;
+  --navy-900: #223448;
+  --navy-800: #2a3e5c;
+  --navy-700: #3a526e;
+  --navy-600: #4a6680;
   
-  /* Accent Gold/Bronze */
-  --gold-600: #b8860b;
-  --gold-500: #d4a017;
-  --gold-400: #e6b422;
-  --gold-300: #f0c75e;
-  --gold-200: #f5d89a;
-  --gold-100: #faf0d6;
+  /* Accent Green - Verde #c1ff72 */
+  --gold-600: #8fcc3a;
+  --gold-500: #a8e650;
+  --gold-400: #c1ff72;
+  --gold-300: #d0ff94;
+  --gold-200: #e0ffb6;
+  --gold-100: #f0ffd8;
   
   /* Neutrals */
   --gray-900: #111827;
@@ -160,5 +160,5 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Button hover glow */
 .btn-glow:hover {
-  box-shadow: 0 0 30px rgba(212, 160, 23, 0.4);
+  box-shadow: 0 0 30px rgba(193, 255, 114, 0.4);
 }

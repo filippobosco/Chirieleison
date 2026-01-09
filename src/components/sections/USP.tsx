@@ -40,11 +40,11 @@ export function USP() {
             <div className="bg-gradient-to-br from-[var(--navy-950)] to-[var(--navy-800)] rounded-3xl p-8 md:p-10 text-white">
               <div className="flex items-center gap-6 mb-6">
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--gold-400)] to-[var(--gold-600)] flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl font-bold">AV</span>
+                  <span className="text-2xl font-bold">AC</span>
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold">
-                    Antonio Vettese
+                    Antonio Chirieleison
                   </h3>
                   <p className="text-[var(--gold-400)] font-medium">
                     Il Rigore e la Protezione
@@ -101,7 +101,7 @@ export function USP() {
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold">
-                    Erik Visentin
+                    Erik Vitali
                   </h3>
                   <p className="text-[var(--gold-400)] font-medium">
                     L&apos;Esperienza e la Strategia

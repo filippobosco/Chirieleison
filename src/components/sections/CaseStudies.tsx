@@ -63,7 +63,7 @@ export function CaseStudies() {
           subtitle="Non promettiamo miracoli. Promettiamo metodo, chiarezza e visione di lungo periodo. Ecco cosa abbiamo costruito insieme ad alcuni nostri clienti."
         />
 
-        <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 md:gap-8 items-stretch">
           {caseStudies.map((study, index) => (
             <motion.div
               key={index}
@@ -71,9 +71,9 @@ export function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-white rounded-3xl shadow-sm border border-[var(--gray-200)] overflow-hidden hover:shadow-lg hover:border-[var(--gold-300)] transition-all duration-300 group"
+              className="bg-white rounded-3xl shadow-sm border border-[var(--gray-200)] overflow-hidden hover:shadow-lg hover:border-[var(--gold-300)] transition-all duration-300 group flex flex-col h-full"
             >
-              <div className="p-6 md:p-8">
+              <div className="p-6 md:p-8 flex-grow">
                 {/* Quote */}
                 <div className="mb-6">
                   <div className="text-4xl text-[var(--gold-400)] mb-2">&ldquo;</div>
