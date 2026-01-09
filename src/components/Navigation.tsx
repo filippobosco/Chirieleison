@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Phone, Menu, X } from "lucide-react";
@@ -42,13 +43,13 @@ export function Navigation() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <a href="#" className="flex items-center gap-3">
-              <div
-                className={`w-10 h-10 rounded-lg bg-gradient-to-br from-[var(--gold-400)] to-[var(--gold-600)] flex items-center justify-center ${
-                  isScrolled ? "" : "shadow-lg"
-                }`}
-              >
-                <span className="text-white font-bold text-lg">CV</span>
-              </div>
+              <Image
+                src="/logo.svg"
+                alt="CV Wealth Partners"
+                width={48}
+                height={48}
+                className={`w-12 h-12 ${isScrolled ? "" : "brightness-0 invert"}`}
+              />
               <div className="hidden sm:block">
                 <span
                   className={`font-bold text-lg ${
