@@ -16,16 +16,13 @@ export function Footer() {
             {/* Brand */}
             <div className="lg:col-span-1">
               <div className="mb-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <Image
-                    src="/logo.svg"
-                    alt="CV Wealth Partners"
-                    width={48}
-                    height={48}
-                    className="w-12 h-12 brightness-0 invert"
-                  />
-                  <h3 className="text-2xl font-bold">CV Wealth Partners</h3>
-                </div>
+                <Image
+                  src="/chirieleison_logo.png"
+                  alt="CV Wealth Partners"
+                  width={500}
+                  height={135}
+                  className="h-28 w-auto brightness-0 invert"
+                />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
                 Consulenza finanziaria e patrimoniale con un occhio di riguardo

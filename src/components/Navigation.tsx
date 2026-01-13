@@ -42,23 +42,14 @@ export function Navigation() {
         <Container size="xl">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <a href="#" className="flex items-center gap-3">
+            <a href="#" className="flex items-center">
               <Image
-                src="/logo.svg"
+                src="/chirieleison_logo.png"
                 alt="CV Wealth Partners"
-                width={48}
-                height={48}
-                className={`w-12 h-12 ${isScrolled ? "" : "brightness-0 invert"}`}
+                width={500}
+                height={135}
+                className={`h-20 md:h-24 w-auto ${isScrolled ? "" : "brightness-0 invert"}`}
               />
-              <div className="hidden sm:block">
-                <span
-                  className={`font-bold text-lg ${
-                    isScrolled ? "text-[var(--navy-950)]" : "text-white"
-                  }`}
-                >
-                  CV Wealth Partners
-                </span>
-              </div>
             </a>
 
             {/* Desktop Navigation */}
