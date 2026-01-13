@@ -115,7 +115,7 @@ export function Hero() {
                   <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[var(--navy-900)]/80 border border-[var(--gold-400)]/30 backdrop-blur-sm">
                     <Shield className="w-4 h-4 text-[var(--gold-400)]" />
                     <span className="text-xs font-semibold text-white">
-                      Ex Ufficiale GdF
+                      Ex Ispettore GdF
                     </span>
                   </div>
                   <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[var(--navy-900)]/80 border border-[var(--gold-400)]/30 backdrop-blur-sm">
