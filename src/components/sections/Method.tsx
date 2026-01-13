@@ -39,10 +39,10 @@ const steps = [
     icon: Lightbulb,
     number: "03",
     title: "STRATEGIA PERSONALIZZATA",
-    subtitle: "Zero soluzioni preconfezionate",
+    subtitle: "Soluzioni su misura",
     description: "Sviluppiamo una proposta su misura:",
     points: [
-      "Scelta tra 4.000+ strumenti finanziari indipendenti",
+      "Scelta tra 4.000+ strumenti finanziari",
       "Ottimizzazione fiscale integrata (quello che nessuno fa)",
       "Spiegazione trasparente di ogni scelta e alternativa",
       "Simulazioni e scenari concreti",
@@ -59,8 +59,7 @@ const steps = [
       "La proposta è un punto di partenza, non un contratto blindato:",
     points: [
       "Discutiamo insieme ogni dettaglio",
-      "Rispondiamo a tutte le tue domande (e ce ne saranno)",
-      "Possiamo lavorare in piena delega o in co-gestione",
+      "Rispondiamo a tutte le tue domande",
       "Zero pressione: decidi tu i tempi",
     ],
     footer:
@@ -114,10 +113,10 @@ export function Method() {
                   <div className="bg-[var(--gray-50)] rounded-3xl p-6 md:p-8 border border-[var(--gray-200)] hover:border-[var(--gold-300)] hover:shadow-lg transition-all duration-300">
                     <div className="flex items-center gap-4 mb-4">
                       <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[var(--gold-400)] to-[var(--gold-600)] flex items-center justify-center">
-                        <step.icon className="w-7 h-7 text-white" />
+                        <step.icon className="w-7 h-7 text-[var(--navy-800)]" />
                       </div>
                       <div>
-                        <span className="text-[var(--gold-600)] font-bold text-sm">
+                        <span className="text-[var(--navy-800)] font-bold text-sm">
                           STEP {step.number}
                         </span>
                         <h3 className="text-xl md:text-2xl font-bold text-[var(--navy-950)]">
@@ -126,7 +125,7 @@ export function Method() {
                       </div>
                     </div>
 
-                    <p className="text-[var(--gold-600)] font-medium mb-4">
+                    <p className="text-[var(--navy-700)] font-medium mb-4">
                       {step.subtitle}
                     </p>
 
@@ -154,7 +153,7 @@ export function Method() {
 
                 {/* Timeline Node - Desktop Only */}
                 <div className="hidden lg:flex flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-[var(--gold-400)] to-[var(--gold-600)] items-center justify-center shadow-lg shadow-[var(--gold-500)]/30 z-10">
-                  <span className="text-2xl font-bold text-white">
+                  <span className="text-2xl font-bold text-[var(--navy-800)]">
                     {step.number}
                   </span>
                 </div>

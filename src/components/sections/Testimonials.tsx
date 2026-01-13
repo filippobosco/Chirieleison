@@ -24,9 +24,9 @@ const testimonials = [
   },
   {
     quote:
-      "La competenza fiscale di Antonio è qualcosa che non avevo mai trovato in un consulente finanziario. Mi ha fatto risparmiare cifre che mai avrei immaginato di perdere in inefficienze.",
+      "Finalmente ho una visione chiara del mio patrimonio. Antonio ed Erik mi hanno aiutato a capire dove stavano le inefficienze e a costruire una strategia coerente. Ogni trimestre ci incontriamo e so sempre a che punto siamo.",
     name: "Luca F.",
-    role: "CEO azienda familiare",
+    role: "Imprenditore",
     years: 4,
     initials: "LF",
   },
@@ -50,7 +50,7 @@ export function Testimonials() {
             >
               {/* Quote Icon */}
               <div className="absolute -top-4 left-6 w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--gold-400)] to-[var(--gold-600)] flex items-center justify-center">
-                <Quote className="w-5 h-5 text-white" />
+                <Quote className="w-5 h-5 text-[var(--navy-800)]" />
               </div>
 
               {/* Quote */}
@@ -72,7 +72,7 @@ export function Testimonials() {
                   <p className="text-sm text-[var(--gray-600)]">
                     {testimonial.role}
                   </p>
-                  <p className="text-xs text-[var(--gold-600)] font-medium">
+                  <p className="text-xs text-[var(--navy-700)] font-medium">
                     Cliente da {testimonial.years} anni
                   </p>
                 </div>

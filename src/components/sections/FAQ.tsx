@@ -8,19 +8,9 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "Quanto costa la vostra consulenza?",
+    question: "Devo lasciare la mia banca per lavorare con voi?",
     answer:
-      "Lavoriamo con fee trasparente percentuale sul patrimonio gestito, concordata in anticipo e senza sorprese. Durante il primo incontro gratuito ti spieghiamo esattamente la struttura dei costi, che è sempre inferiore a quello che pagheresti in una banca tradizionale se consideri tutti i costi nascosti. Zero commissioni occulte, zero incentivi su prodotti, zero conflitti di interesse.",
-  },
-  {
-    question: "Perché dovrei lasciare la mia banca?",
-    answer:
-      "Non devi per forza lasciare la tua banca. Molti nostri clienti mantengono il conto corrente dove sono. Quello che cambia è CHI gestisce i tuoi investimenti e con QUALE logica. Noi non siamo vincolati a vendere prodotti di una banca specifica. Abbiamo accesso a 4.000+ strumenti e scegliamo solo quelli che servono davvero ai tuoi obiettivi.",
-  },
-  {
-    question: "Come siete remunerati?",
-    answer:
-      "Esclusivamente tramite fee di consulenza concordata, calcolata come percentuale sul patrimonio gestito. Non riceviamo commissioni da banche, non abbiamo incentivi su prodotti specifici, non abbiamo target di vendita. Il nostro unico interesse è far crescere e proteggere il tuo patrimonio, perché se lo facciamo bene, tu resti con noi nel tempo.",
+      "No, non necessariamente. Molti nostri clienti mantengono il conto che usano per la quotidianità e utilizzano il nostro servizio per la gestione dei risparmi. Grazie all'appoggio di Banca Generali, però, offriamo anche la possibilità di avere un conto principale completo: carte, bancomat, addebiti permanenti e tutto ciò che serve. Lo stesso vale per le aziende: possiamo gestire il cash flow o il risparmio accumulato, mentre il conto operativo resta dove preferisci.",
   },
   {
     question: "Quanto patrimonio serve per diventare vostri clienti?",
@@ -30,17 +20,17 @@ const faqs = [
   {
     question: "Siete abilitati e regolamentati?",
     answer:
-      "Assolutamente sì. Siamo iscritti all'Albo dei Consulenti Finanziari (OCF - Organismo di vigilanza e tenuta dell'albo unico dei Consulenti Finanziari) e operiamo nel pieno rispetto della normativa MiFID II. Questo significa massima trasparenza, obblighi informativi stringenti e tutela totale del cliente.",
+      "Assolutamente sì. Siamo iscritti all'Albo dei Consulenti Finanziari (OCF - Organismo di vigilanza e tenuta dell'albo unico dei Consulenti Finanziari) e operiamo nel pieno rispetto della normativa MiFID II. Antonio possiede inoltre la Certificazione EFPA ESG Advisor (European Financial Planning Association). Questo significa massima trasparenza, obblighi informativi stringenti e tutela totale del cliente.",
   },
   {
     question: "Cosa succede durante il primo incontro?",
     answer:
-      "Il primo incontro dura circa 60-90 minuti ed è completamente gratuito e senza impegno. Non ti proporremo nulla. Il nostro obiettivo è ascoltarti, capire la tua situazione attuale, i tuoi obiettivi e le tue preoccupazioni. Ti faremo domande, non ti venderemo prodotti. Alla fine capirai se ha senso lavorare insieme, senza alcuna pressione.",
+      "Il primo incontro dura circa 40-60 minuti ed è completamente gratuito e senza impegno. Non ti proporremo nulla. Il nostro obiettivo è ascoltarti, capire la tua situazione attuale, i tuoi obiettivi e le tue preoccupazioni. Ti faremo domande, non ti venderemo prodotti. Alla fine capirai se ha senso lavorare insieme, senza alcuna pressione.",
   },
   {
     question: "Lavorate solo con clienti della vostra zona?",
     answer:
-      "No, seguiamo clienti in tutta Italia. Molti incontri li facciamo da remoto (con strumenti professionali e massima sicurezza), ma per il primo incontro preferiamo sempre vederci di persona quando possibile. La fiducia si costruisce anche guardandosi negli occhi.",
+      "No, seguiamo clienti in tutta Italia. Per il primo incontro preferiamo sempre vederci di persona quando possibile: la fiducia si costruisce anche guardandosi negli occhi. Detto questo, possiamo lavorare anche completamente da remoto con tutti gli strumenti necessari. Abbiamo clienti che vediamo di persona una volta all'anno e con cui gestiamo tutto a distanza senza problemi.",
   },
   {
     question: "Che garanzie ho che i miei soldi siano al sicuro?",
@@ -81,7 +71,7 @@ export function FAQ() {
                   transition={{ duration: 0.2 }}
                   className="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--gold-100)] flex items-center justify-center"
                 >
-                  <ChevronDown className="w-5 h-5 text-[var(--gold-600)]" />
+                  <ChevronDown className="w-5 h-5 text-[var(--navy-800)]" />
                 </motion.div>
               </button>
 

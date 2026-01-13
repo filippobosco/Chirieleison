@@ -26,13 +26,10 @@ export function Footer() {
                   />
                   <h3 className="text-2xl font-bold">CV Wealth Partners</h3>
                 </div>
-                <p className="text-[var(--gold-400)] text-sm">
-                  Consulenza Finanziaria e Patrimoniale Indipendente
-                </p>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
-                La prima consulenza patrimoniale in Italia con doppia expertise:
-                rigore fiscale e strategia finanziaria private banking.
+                Consulenza finanziaria e patrimoniale con un occhio di riguardo
+                alla pianificazione fiscale e successoria.
               </p>
             </div>
 

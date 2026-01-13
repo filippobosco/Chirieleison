@@ -19,7 +19,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "CV Wealth Partners | Consulenza Patrimoniale Premium",
   description:
-    "La prima consulenza patrimoniale in Italia con doppia garanzia: rigore fiscale di chi ha controllato i patrimoni + strategia finanziaria di chi ha gestito €180M in Private Banking.",
+    "Consulenza finanziaria e patrimoniale personalizzata. Strategie su misura per imprenditori e famiglie, con attenzione alla pianificazione fiscale e successoria.",
   keywords: [
     "consulenza patrimoniale",
     "wealth management",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CV Wealth Partners | Consulenza Patrimoniale Premium",
     description:
-      "Il tuo patrimonio merita più di un consulente bancario che cambia ogni 18 mesi. Prenota il tuo Check-up Patrimoniale Gratuito.",
+      "Il tuo patrimonio merita un consulente che faccia davvero il tuo interesse. Prenota il tuo Check-up Finanziario e Patrimoniale.",
     type: "website",
     locale: "it_IT",
   },

@@ -4,14 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Shield, TrendingUp, Users, Award } from "lucide-react";
-
-const trustElements = [
-  { icon: Shield, text: "Ex Ufficiale Guardia di Finanza" },
-  { icon: TrendingUp, text: "19 anni esperienza Private Banking" },
-  { icon: Users, text: "Oltre €85M di patrimoni seguiti" },
-  { icon: Award, text: "Consulenza indipendente al 100%" },
-];
+import { Shield, TrendingUp } from "lucide-react";
 
 export function Hero() {
   return (
@@ -47,20 +40,20 @@ export function Hero() {
             >
               <span className="w-2 h-2 rounded-full bg-[var(--gold-500)] animate-pulse" />
               <span className="text-[var(--gold-400)] text-sm font-medium">
-                Consulenza Patrimoniale Premium
+                Consulenza Finanziaria e Patrimoniale
               </span>
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
-              Il tuo patrimonio merita più di un consulente bancario{" "}
-              <span className="text-gradient">che cambia ogni 18 mesi</span>
+              Il tuo patrimonio merita un consulente{" "}
+              <span className="text-gradient">che faccia davvero il tuo interesse</span>
             </h1>
 
             <p className="text-xl text-gray-300 mb-4 leading-relaxed">
-              La prima consulenza patrimoniale in Italia con{" "}
-              <span className="text-white font-semibold">doppia garanzia</span>:
-              rigore fiscale di chi ha controllato i patrimoni + strategia
-              finanziaria di chi ha gestito €180M in Private Banking.
+              <span className="text-white font-semibold">Doppia garanzia</span>:
+              l&apos;esperienza di chi segue ogni giorno oltre 150 clienti fidelizzati
+              con strategie finanziarie personalizzate e massima attenzione alla
+              pianificazione fiscale e successoria.
             </p>
 
             <p className="text-lg text-gray-400 mb-8">
@@ -72,31 +65,13 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <Button size="lg" className="btn-glow text-lg">
-                Prenota il tuo Check-up Patrimoniale Gratuito
+                Prenota il tuo Check-up Finanziario e Patrimoniale
               </Button>
             </div>
 
-            <p className="text-sm text-gray-500 mb-8">
-              Valore €500 – Senza impegno – Massima riservatezza
+            <p className="text-sm text-gray-500">
+              Senza impegno – Massima riservatezza
             </p>
-
-            {/* Trust Elements */}
-            <div className="grid grid-cols-2 gap-4">
-              {trustElements.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
-                  className="flex items-center gap-3"
-                >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[var(--gold-500)]/10 border border-[var(--gold-500)]/20 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-[var(--gold-400)]" />
-                  </div>
-                  <span className="text-sm text-gray-300">{item.text}</span>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
 
           {/* Founders Card */}

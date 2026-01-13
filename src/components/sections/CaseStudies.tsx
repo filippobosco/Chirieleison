@@ -8,33 +8,33 @@ import { TrendingUp, Clock } from "lucide-react";
 const caseStudies = [
   {
     quote:
-      "Recuperati €43.000 in inefficienze fiscali che ignoravo completamente",
-    client: "Marco T., Imprenditore manifatturiero",
+      "Le imposte diventano patrimonio per mia figlia",
+    client: "Professionista, reddito €120.000",
     situation:
-      "Liquidità aziendale ferma su c/c ordinario, patrimonio personale mai ottimizzato fiscalmente",
+      "Reddito elevato con aliquota marginale al 43%, nessuna strategia di ottimizzazione fiscale attiva",
     actions: [
-      "Analisi fiscale completa del patrimonio aziendale e personale",
-      "Identificazione di 4 inefficienze strutturali",
-      "Ristrutturazione della tesoreria aziendale",
-      "Ottimizzazione regime fiscale investimenti personali",
+      "Analisi della posizione fiscale e previdenziale",
+      "Attivazione deduzione fiscale tramite fondo pensione (€5.160/anno)",
+      "Beneficio fiscale annuo di €2.220 reinvestito interamente",
+      "Piano di accumulo (PAC) intestato alla figlia alimentato dal risparmio fiscale",
     ],
     result:
-      "€43.000 recuperati nel primo anno + strategia tesoreria che genera +3,2% annuo sulla liquidità operativa",
-    years: 4,
+      "€22.000 versati in 10 anni → capitale figlia ~€44.000. Il genitore riduce le tasse ogni anno, la figlia costruisce patrimonio nel tempo.",
+    years: 3,
   },
   {
-    quote: "Finalmente qualcuno che mi spiega dove vanno i miei soldi",
+    quote: "Finalmente una visione chiara di tutto il nostro patrimonio",
     client: "Famiglia B., Patrimonio €2,1M (immobiliare + finanziario)",
     situation:
-      "Portafoglio frammentato su 3 banche, zero visione d'insieme, costi occulti elevati",
+      "Portafoglio frammentato su 3 banche, immobili e partecipazioni aziendali mai analizzati insieme",
     actions: [
-      "Consolidamento e analisi completa del patrimonio",
-      "Identificazione di costi nascosti per €8.700/anno",
+      "Mappatura completa del patrimonio: finanziario, immobiliare e aziendale",
+      "Analisi delle inefficienze e delle opportunità di ottimizzazione",
       "Strategia integrata con focus protezione e passaggio generazionale",
       "Piano accumulo dedicato per istruzione nipoti",
     ],
     result:
-      "-67% di costi totali, strategia chiara condivisa con tutta la famiglia, €150k già accantonati per i nipoti",
+      "Visione unitaria del patrimonio, strategia chiara condivisa con tutta la famiglia, €150k già accantonati per i nipoti",
     years: 6,
   },
   {
@@ -76,14 +76,14 @@ export function CaseStudies() {
               <div className="p-6 md:p-8 flex-grow">
                 {/* Quote */}
                 <div className="mb-6">
-                  <div className="text-4xl text-[var(--gold-400)] mb-2">&ldquo;</div>
+                  <div className="text-4xl text-[var(--navy-700)] mb-2">&ldquo;</div>
                   <p className="text-xl md:text-2xl font-semibold text-[var(--navy-950)] italic leading-tight">
                     {study.quote}
                   </p>
                 </div>
 
                 {/* Client */}
-                <p className="text-sm font-semibold text-[var(--gold-600)] mb-4">
+                <p className="text-sm font-semibold text-[var(--navy-700)] mb-4">
                   {study.client}
                 </p>
 
@@ -119,8 +119,8 @@ export function CaseStudies() {
               {/* Result Box */}
               <div className="bg-gradient-to-r from-[var(--gold-50)] to-[var(--gold-100)] p-6 border-t border-[var(--gold-200)]">
                 <div className="flex items-center gap-2 mb-2">
-                  <TrendingUp className="w-4 h-4 text-[var(--gold-600)]" />
-                  <span className="text-xs uppercase tracking-wider text-[var(--gold-700)] font-semibold">
+                  <TrendingUp className="w-4 h-4 text-[var(--navy-800)]" />
+                  <span className="text-xs uppercase tracking-wider text-[var(--navy-800)] font-semibold">
                     Risultato
                   </span>
                 </div>
@@ -129,8 +129,8 @@ export function CaseStudies() {
                 </p>
 
                 <div className="flex items-center gap-2 mt-4 pt-4 border-t border-[var(--gold-200)]">
-                  <Clock className="w-4 h-4 text-[var(--gold-600)]" />
-                  <span className="text-sm text-[var(--gold-700)]">
+                  <Clock className="w-4 h-4 text-[var(--navy-800)]" />
+                  <span className="text-sm text-[var(--navy-700)]">
                     Cliente da {study.years} anni
                   </span>
                 </div>

@@ -71,7 +71,7 @@ export function PainPoints() {
           <p className="text-xl md:text-2xl text-[var(--navy-800)] leading-relaxed">
             C&apos;è un modo diverso di proteggere e far crescere il tuo patrimonio.
             <br />
-            <span className="text-[var(--gold-600)] font-semibold">
+            <span className="text-[var(--navy-800)] font-semibold">
               E parte da una scelta semplice: affidarti a chi mette il tuo
               interesse prima di tutto.
             </span>

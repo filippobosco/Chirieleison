@@ -21,11 +21,11 @@ export function Button({
 
   const variants = {
     primary:
-      "bg-gradient-to-r from-[var(--gold-500)] to-[var(--gold-600)] text-white shadow-lg hover:shadow-xl hover:shadow-[var(--gold-500)]/30 hover:scale-[1.02] active:scale-[0.98]",
+      "bg-gradient-to-r from-[var(--gold-500)] to-[var(--gold-600)] text-[var(--navy-800)] shadow-lg hover:shadow-xl hover:shadow-[var(--gold-500)]/30 hover:scale-[1.02] active:scale-[0.98]",
     secondary:
       "bg-[var(--navy-800)] text-white hover:bg-[var(--navy-700)] shadow-md hover:shadow-lg",
     outline:
-      "border-2 border-[var(--gold-500)] text-[var(--gold-600)] hover:bg-[var(--gold-500)] hover:text-white",
+      "border-2 border-[var(--gold-500)] text-[var(--gold-400)] hover:bg-[var(--gold-500)] hover:text-[var(--navy-800)]",
   };
 
   const sizes = {

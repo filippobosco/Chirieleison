@@ -37,6 +37,7 @@ const benefits = [
 ];
 
 const patrimonyOptions = [
+  { value: "50-250", label: "€50k - €250k" },
   { value: "250-500", label: "€250k - €500k" },
   { value: "500-1m", label: "€500k - €1M" },
   { value: "1m-3m", label: "€1M - €3M" },
@@ -79,12 +80,11 @@ export function FinalCTA() {
             </h2>
 
             <p className="text-xl md:text-2xl text-[var(--navy-800)] font-medium mb-6">
-              Prenota ora il tuo Check-up Patrimoniale Gratuito{" "}
-              <span className="text-[var(--navy-950)]">(Valore €500)</span>
+              Prenota il tuo Check-up Finanziario e Patrimoniale{" "}
             </p>
 
             <p className="text-[var(--navy-700)] mb-6">
-              60-90 minuti dedicati a capire la tua situazione e a identificare
+              40-60 minuti dedicati a capire la tua situazione e a identificare
               le aree di miglioramento più urgenti.
             </p>
 
@@ -121,13 +121,13 @@ export function FinalCTA() {
                 <div className="flex items-center gap-3 mb-2">
                   <ShieldCheck className="w-5 h-5 text-[var(--navy-950)]" />
                   <span className="font-semibold text-[var(--navy-950)]">
-                    Garanzia
+                    Senza impegno
                   </span>
                 </div>
                 <p className="text-[var(--navy-800)] text-sm">
-                  Se dopo il check-up non vedi valore concreto in quello che
-                  possiamo fare per te, non ti chiediamo nulla. Nessuna
-                  insistenza, nessuna pressione. Punto.
+                  Il primo incontro è completamente gratuito e senza alcun obbligo. 
+                  Il nostro obiettivo è comprendere la tua situazione e valutare 
+                  insieme se possiamo esserti utili. Nessuna pressione commerciale.
                 </p>
               </div>
             </div>
@@ -172,7 +172,7 @@ export function FinalCTA() {
                 className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl"
               >
                 <h3 className="text-2xl font-bold text-[var(--navy-950)] mb-6">
-                  Prenota il tuo Check-up Gratuito
+                  Prenota il tuo Check-up Finanziario e Patrimoniale
                 </h3>
 
                 <div className="space-y-5">
@@ -305,7 +305,7 @@ export function FinalCTA() {
                       Accetto la{" "}
                       <a
                         href="/privacy"
-                        className="text-[var(--gold-600)] hover:underline"
+                        className="text-[var(--navy-700)] font-semibold hover:underline"
                       >
                         Privacy Policy
                       </a>{" "}
@@ -328,7 +328,7 @@ export function FinalCTA() {
                   >
                     {isSubmitting
                       ? "Invio in corso..."
-                      : "Prenota il Check-up Gratuito"}
+                      : "Prenota il tuo Check-up Finanziario e Patrimoniale"}
                   </Button>
                 </div>
               </form>

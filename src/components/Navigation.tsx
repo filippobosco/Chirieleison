@@ -94,7 +94,7 @@ export function Navigation() {
 
               <a href="#prenota">
                 <Button size="sm" className="hidden md:flex">
-                  Prenota Check-up
+                  Prenota Check-up Finanziario
                 </Button>
               </a>
 
@@ -147,7 +147,7 @@ export function Navigation() {
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <Button size="lg" className="w-full">
-                        Prenota Check-up Gratuito
+                        Prenota il tuo Check-up Finanziario e Patrimoniale
                       </Button>
                     </a>
                   </div>

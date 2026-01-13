@@ -20,11 +20,11 @@ const comparisons = [
   },
   {
     bank: "Prodotti limitati della banca",
-    cv: "4.000+ strumenti indipendenti. Scelta totale",
+    cv: "4.000+ strumenti. Scelta totale",
   },
   {
     bank: "Compensi nascosti e conflitti di interesse",
-    cv: "Fee trasparente. Zero conflitti. Nessun incentivo occulto",
+    cv: "Fee trasparente. Zero conflitti.",
   },
   {
     bank: "Gestione spot e occasionale",
@@ -32,7 +32,7 @@ const comparisons = [
   },
   {
     bank: "Zero competenza fiscale",
-    cv: "Doppia expertise: fiscale + finanziaria",
+    cv: "Doppia expertise: finanziaria + fiscale",
   },
   {
     bank: "Risposte in settimane (se va bene)",
@@ -62,7 +62,7 @@ export function Comparison() {
                 </span>
               </div>
               <div className="bg-gradient-to-r from-[var(--gold-400)] to-[var(--gold-500)] rounded-xl p-4 text-center">
-                <span className="font-semibold text-white uppercase tracking-wider text-sm">
+                <span className="font-semibold text-[var(--navy-800)] uppercase tracking-wider text-sm">
                   CV Wealth Partners
                 </span>
               </div>
