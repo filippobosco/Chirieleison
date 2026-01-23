@@ -131,20 +131,6 @@ export function FinalCTA() {
                 </p>
               </div>
             </div>
-
-            {/* Phone CTA */}
-            <div className="flex items-center gap-4">
-              <span className="text-[var(--navy-800)]">
-                Preferisci parlare prima al telefono?
-              </span>
-              <a
-                href="tel:+390000000000"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--navy-950)] text-[var(--gold-400)] font-medium hover:bg-[var(--navy-800)] transition-colors"
-              >
-                <Phone className="w-4 h-4" />
-                Chiamaci
-              </a>
-            </div>
           </motion.div>
 
           {/* Form */}

@@ -51,6 +51,9 @@ export function Navigation() {
                 width={500}
                 height={135}
                 className={`h-12 md:h-16 w-auto ${isScrolled ? "" : "brightness-0 invert"}`}
+                quality={100}
+                priority
+                style={{ imageRendering: 'crisp-edges' }}
               />
             </a>
 
