@@ -19,6 +19,8 @@ export function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+    
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -42,13 +44,13 @@ export function Navigation() {
         <Container size="xl">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
-            <a href="#" className="flex items-center">
+            <a href="#" className="flex items-center pt-2">
               <Image
-                src="/chirieleison_logo.png"
+                src="/logo.svg"
                 alt="CV Wealth Partners"
                 width={500}
                 height={135}
-                className={`h-20 md:h-24 w-auto ${isScrolled ? "" : "brightness-0 invert"}`}
+                className={`h-12 md:h-16 w-auto ${isScrolled ? "" : "brightness-0 invert"}`}
               />
             </a>
 
@@ -84,7 +86,7 @@ export function Navigation() {
               </a>
 
               <a href="#prenota">
-                <Button size="sm" className="hidden md:flex">
+                <Button size="sm" className="hidden md:flex px-2 py-1.5 text-xs">
                   Prenota Check-up Finanziario
                 </Button>
               </a>
@@ -137,7 +139,7 @@ export function Navigation() {
                       href="#prenota"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <Button size="lg" className="w-full">
+                      <Button size="sm" className="w-full text-sm">
                         Prenota il tuo Check-up Finanziario e Patrimoniale
                       </Button>
                     </a>

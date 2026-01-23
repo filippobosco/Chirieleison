@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Shield, TrendingUp, Handshake } from "lucide-react";
 
 const antonioPoints = [
-  "Analisi fiscale preventiva",
+  "Analisi degli impianti finanziari e fiscali delle scelte di investimento",
   "Visione normativa e compliance assoluta",
   "Protezione patrimoniale",
   "Certificazione EFPA ESG Advisor (European Financial Planning Association)",

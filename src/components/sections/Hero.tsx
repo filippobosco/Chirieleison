@@ -79,7 +79,7 @@ export function Hero() {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative group"
+            className="relative group scale-[0.8] origin-center"
           >
             {/* Glow effect */}
             <div className="absolute -inset-2 bg-gradient-to-r from-[var(--gold-400)] to-[var(--gold-500)] rounded-3xl blur-lg opacity-20 group-hover:opacity-40 transition duration-500" />

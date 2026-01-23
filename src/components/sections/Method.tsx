@@ -48,7 +48,7 @@ const steps = [
       "Simulazioni e scenari concreti",
     ],
     footer:
-      "Ti presentiamo tutto in linguaggio chiaro. Se non capisci qualcosa, la colpa è nostra, non tua.",
+      "Ogni strategia viene spiegata con chiarezza e approfondita finché ogni dettaglio è davvero compreso",
   },
   {
     icon: MessageSquare,

@@ -23,8 +23,8 @@ const comparisons = [
     cv: "4.000+ strumenti. Scelta totale",
   },
   {
-    bank: "Compensi nascosti e conflitti di interesse",
-    cv: "Fee trasparente. Zero conflitti.",
+    bank: "Costi e incentivi raramente spiegati",
+    cv: "Costi e modalità di remunerazione sempre esplicitati",
   },
   {
     bank: "Gestione spot e occasionale",

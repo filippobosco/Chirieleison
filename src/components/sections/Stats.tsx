@@ -9,7 +9,7 @@ const values = [
     icon: Sparkles,
     title: "Nato per scelta",
     description:
-      "Non siamo una filiale, non siamo un franchise. Siamo un progetto indipendente, costruito dal rifiuto dei modelli standard.",
+      "Selezioniamo gli strumenti in base agli obiettivi, confrontiamo alternative e costruiamo soluzioni con metodo e responsabilità.",
   },
   {
     icon: Users,
@@ -41,7 +41,7 @@ export function Stats() {
           </h2>
           <p className="text-lg md:text-xl text-[var(--gray-600)] max-w-3xl mx-auto leading-relaxed">
             CV Wealth Partners è un team appena nato per scelta, non per caso.
-            Nasce dalla convinzione che la consulenza patrimoniale possa essere
+            Nasce dalla convinzione che la consulenza finanziaria e patrimoniale possa essere
             fatta in modo diverso: più vicino, più trasparente, più umano.
           </p>
         </motion.div>

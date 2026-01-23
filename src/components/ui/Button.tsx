@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { ComponentProps } from "react";
 
-interface ButtonProps extends HTMLMotionProps<"button"> {
+interface ButtonProps extends ComponentProps<"button"> {
   variant?: "primary" | "secondary" | "outline";
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;
@@ -35,13 +35,11 @@ export function Button({
   };
 
   return (
-    <motion.button
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+    <button
       className={cn(baseStyles, variants[variant], sizes[size], className)}
       {...props}
     >
       {children}
-    </motion.button>
+    </button>
   );
 }

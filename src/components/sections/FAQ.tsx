@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "Devo lasciare la mia banca per lavorare con voi?",
     answer:
-      "No, non necessariamente. Molti nostri clienti mantengono il conto che usano per la quotidianità e utilizzano il nostro servizio per la gestione dei risparmi. Grazie all'appoggio di Banca Generali, però, offriamo anche la possibilità di avere un conto principale completo: carte, bancomat, addebiti permanenti e tutto ciò che serve. Lo stesso vale per le aziende: possiamo gestire il cash flow o il risparmio accumulato, mentre il conto operativo resta dove preferisci.",
+      "No. Puoi continuare a utilizzare la tua banca per l'operatività quotidiana e affiancare il nostro servizio per la gestione del patrimonio. Lavoriamo all'interno di una struttura bancaria regolamentata che consente piena operatività."
   },
   {
     question: "Quanto patrimonio serve per diventare vostri clienti?",
@@ -30,7 +30,7 @@ const faqs = [
   {
     question: "Lavorate solo con clienti della vostra zona?",
     answer:
-      "No, seguiamo clienti in tutta Italia. Per il primo incontro preferiamo sempre vederci di persona quando possibile: la fiducia si costruisce anche guardandosi negli occhi. Detto questo, possiamo lavorare anche completamente da remoto con tutti gli strumenti necessari. Abbiamo clienti che vediamo di persona una volta all'anno e con cui gestiamo tutto a distanza senza problemi.",
+      "No, seguiamo clienti in tutta Italia. Possiamo lavorare anche completamente da remoto con tutti gli strumenti necessari.",
   },
   {
     question: "Che garanzie ho che i miei soldi siano al sicuro?",
