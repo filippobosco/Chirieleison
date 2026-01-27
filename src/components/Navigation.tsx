@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Phone, Menu, X } from "lucide-react";
@@ -45,15 +44,11 @@ export function Navigation() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <a href="#" className="flex items-center pt-2">
-              <Image
-                src="/logo.svg"
+              <img
+                src={isScrolled ? "/logo.svg" : "/logo-white.svg"}
                 alt="CV Wealth Partners"
-                width={500}
-                height={135}
-                className={`h-12 md:h-16 w-auto ${isScrolled ? "" : "brightness-0 invert"}`}
-                quality={100}
-                priority
-                style={{ imageRendering: 'crisp-edges' }}
+                className="h-12 md:h-16 w-auto"
+                loading="eager"
               />
             </a>
 
@@ -75,7 +70,7 @@ export function Navigation() {
             </div>
 
             {/* CTA */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 md:gap-4">
               <a
                 href="tel:+390000000000"
                 className={`hidden md:flex items-center gap-2 font-medium ${
@@ -89,8 +84,8 @@ export function Navigation() {
               </a>
 
               <a href="#prenota">
-                <Button size="sm" className="hidden md:flex px-2 py-1.5 text-xs">
-                  Prenota Check-up Finanziario
+                <Button size="sm" className="flex px-2 py-1.5 text-xs whitespace-nowrap">
+                  Prenota Check-up
                 </Button>
               </a>
 
