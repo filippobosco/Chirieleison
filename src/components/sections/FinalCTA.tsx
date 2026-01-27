@@ -55,16 +55,46 @@ export function FinalCTA() {
   });
 
   const onSubmit = async (data: FormData) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log("Booking form submitted:", data);
-    
-    // Track conversion event for Meta Pixel
-    if (typeof window !== "undefined" && (window as any).fbq) {
-      (window as any).fbq("track", "Lead");
+    try {
+      // Mappa i valori del patrimonio alle etichette corrette
+      const patrimonyMap: Record<string, string> = {
+        "50-250": "€50k - €250k",
+        "250-500": "€250k - €500k",
+        "500-1m": "€500k - €1M",
+        "1m-3m": "€1M - €3M",
+        "3m+": "Oltre €3M",
+      };
+
+      // Invia i dati all'API
+      const response = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          patrimony: patrimonyMap[data.patrimony] || data.patrimony,
+          message: data.message || "",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Errore nell'invio del form");
+      }
+
+      // Track conversion event for Meta Pixel
+      if (typeof window !== "undefined" && (window as any).fbq) {
+        (window as any).fbq("track", "Lead");
+      }
+
+      // Redirect to thank you page
+      router.push("/thank-you");
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Si è verificato un errore. Riprova più tardi.");
     }
-    
-    // Redirect to thank you page
-    router.push("/thank-you");
   };
 
   return (
