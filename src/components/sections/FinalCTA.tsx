@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -13,7 +13,6 @@ import {
   ShieldCheck,
   Clock,
   AlertCircle,
-  Calendar,
 } from "lucide-react";
 
 const formSchema = z.object({
@@ -45,7 +44,7 @@ const patrimonyOptions = [
 ];
 
 export function FinalCTA() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const router = useRouter();
 
   const {
     register,
@@ -58,7 +57,14 @@ export function FinalCTA() {
   const onSubmit = async (data: FormData) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     console.log("Booking form submitted:", data);
-    setIsSubmitted(true);
+    
+    // Track conversion event for Meta Pixel
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "Lead");
+    }
+    
+    // Redirect to thank you page
+    router.push("/thank-you");
   };
 
   return (
@@ -140,23 +146,10 @@ export function FinalCTA() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {isSubmitted ? (
-              <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl text-center">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--success)]/10 flex items-center justify-center">
-                  <Calendar className="w-8 h-8 text-[var(--success)]" />
-                </div>
-                <h3 className="text-2xl font-bold text-[var(--navy-950)] mb-2">
-                  Richiesta inviata!
-                </h3>
-                <p className="text-[var(--gray-600)]">
-                  Ti contatteremo entro 24 ore per fissare l&apos;incontro.
-                </p>
-              </div>
-            ) : (
-              <form
-                onSubmit={handleSubmit(onSubmit)}
-                className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl"
-              >
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl"
+            >
                 <h3 className="text-2xl font-bold text-[var(--navy-950)] mb-6">
                   Prenota il tuo Check-up Finanziario e Patrimoniale
                 </h3>
@@ -318,7 +311,6 @@ export function FinalCTA() {
                   </Button>
                 </div>
               </form>
-            )}
           </motion.div>
         </div>
       </Container>
