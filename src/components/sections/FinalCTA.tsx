@@ -175,7 +175,7 @@ export function FinalCTA() {
                       type="text"
                       id="booking-name"
                       placeholder="Il tuo nome completo"
-                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all text-[var(--navy-950)]"
                     />
                     {errors.name && (
                       <p className="mt-1 text-sm text-[var(--error)] flex items-center gap-1">
@@ -198,7 +198,7 @@ export function FinalCTA() {
                       type="email"
                       id="booking-email"
                       placeholder="la.tua@email.com"
-                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all text-[var(--navy-950)]"
                     />
                     {errors.email && (
                       <p className="mt-1 text-sm text-[var(--error)] flex items-center gap-1">
@@ -221,7 +221,7 @@ export function FinalCTA() {
                       type="tel"
                       id="booking-phone"
                       placeholder="+39 xxx xxx xxxx"
-                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all text-[var(--navy-950)]"
                     />
                     {errors.phone && (
                       <p className="mt-1 text-sm text-[var(--error)] flex items-center gap-1">
@@ -242,7 +242,7 @@ export function FinalCTA() {
                     <select
                       {...register("patrimony")}
                       id="patrimony"
-                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all bg-white"
+                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all bg-white text-[var(--navy-950)]"
                     >
                       <option value="">Seleziona una fascia</option>
                       {patrimonyOptions.map((option) => (
@@ -272,7 +272,7 @@ export function FinalCTA() {
                       id="message"
                       rows={3}
                       placeholder="Cosa vorresti migliorare nella gestione del tuo patrimonio?"
-                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all resize-none text-[var(--navy-950)]"
                     />
                   </div>
 
