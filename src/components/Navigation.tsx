@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Phone, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#chi-siamo", label: "Chi Siamo" },
@@ -71,18 +71,6 @@ export function Navigation() {
 
             {/* CTA */}
             <div className="flex items-center gap-2 md:gap-4">
-              <a
-                href="tel:+390000000000"
-                className={`hidden md:flex items-center gap-2 font-medium ${
-                  isScrolled
-                    ? "text-[var(--navy-950)]"
-                    : "text-white"
-                }`}
-              >
-                <Phone className="w-4 h-4" />
-                <span className="hidden lg:inline">Chiamaci</span>
-              </a>
-
               <a href="#prenota">
                 <Button size="sm" className="flex px-2 py-1.5 text-xs whitespace-nowrap">
                   Prenota Check-up
