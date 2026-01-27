@@ -64,9 +64,11 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <Button size="lg" className="btn-glow text-lg">
-                Prenota il tuo Check-up Finanziario e Patrimoniale
-              </Button>
+              <a href="#prenota" className="inline-block">
+                <Button size="lg" className="btn-glow text-lg">
+                  Prenota il tuo Check-up Finanziario e Patrimoniale
+                </Button>
+              </a>
             </div>
 
             <p className="text-sm text-gray-500">

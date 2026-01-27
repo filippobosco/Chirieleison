@@ -314,7 +314,7 @@ export function FinalCTA() {
                   >
                     {isSubmitting
                       ? "Invio in corso..."
-                      : "Prenota il tuo Check-up Finanziario e Patrimoniale"}
+                      : "Prenota il tuo Check Up"}
                   </Button>
                 </div>
               </form>
