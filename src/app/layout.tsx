@@ -19,6 +19,11 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "CV Wealth Partners | Consulenza Patrimoniale Premium",
+  icons: {
+    icon: "/favicon-cerchio.png",
+    shortcut: "/favicon-cerchio.png",
+    apple: "/favicon-cerchio.png",
+  },
   description:
     "Consulenza finanziaria e patrimoniale personalizzata. Strategie su misura per imprenditori e famiglie, con attenzione alla pianificazione fiscale e successoria.",
   keywords: [
