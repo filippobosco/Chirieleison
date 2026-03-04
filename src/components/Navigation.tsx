@@ -45,7 +45,7 @@ export function Navigation() {
             {/* Logo */}
             <a href="#" className="flex items-center pt-2">
               <img
-                src={isScrolled ? "/logo.svg" : "/logo-white.svg"}
+                src={isScrolled ? "/logo verde.png" : "/logo bianco.png"}
                 alt="CV Wealth Partners"
                 className="h-12 md:h-16 w-auto"
                 loading="eager"
