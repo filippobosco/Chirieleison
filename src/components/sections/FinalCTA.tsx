@@ -46,6 +46,11 @@ const patrimonyOptions = [
 export function FinalCTA() {
   const router = useRouter();
 
+  const now = new Date();
+  const currentMonth = now.toLocaleString("it-IT", { month: "long" });
+  const currentYear = now.getFullYear();
+  const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1).toLocaleString("it-IT", { month: "long" });
+
   const {
     register,
     handleSubmit,
@@ -148,8 +153,8 @@ export function FinalCTA() {
                 </div>
                 <p className="text-[var(--navy-800)] text-sm">
                   Accettiamo massimo 5 nuovi clienti al mese per garantire il
-                  nostro standard di servizio. I posti disponibili per gennaio
-                  2026 sono già al 60%. Prenota ora per non aspettare febbraio.
+                  nostro standard di servizio. I posti disponibili per {currentMonth}{" "}
+                  {currentYear} sono già al 60%. Prenota ora per non aspettare {nextMonth}.
                 </p>
               </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Shield, TrendingUp, Handshake } from "lucide-react";
@@ -39,8 +40,8 @@ export function USP() {
           >
             <div className="bg-gradient-to-br from-[var(--navy-950)] to-[var(--navy-800)] rounded-3xl p-8 md:p-10 text-white h-full">
               <div className="flex items-center gap-6 mb-6">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--gold-400)] to-[var(--gold-600)] flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl font-bold text-[var(--navy-800)]">EV</span>
+                <div className="w-28 h-36 rounded-2xl overflow-hidden flex-shrink-0">
+                  <Image src="/Erik.jpg" alt="Erik Vitali" width={112} height={144} className="w-full h-full object-cover object-top" />
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold">
@@ -96,8 +97,8 @@ export function USP() {
           >
             <div className="bg-gradient-to-br from-[var(--navy-950)] to-[var(--navy-800)] rounded-3xl p-8 md:p-10 text-white h-full">
               <div className="flex items-center gap-6 mb-6">
-                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--gold-400)] to-[var(--gold-600)] flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl font-bold text-[var(--navy-800)]">AC</span>
+                <div className="w-28 h-36 rounded-2xl overflow-hidden flex-shrink-0">
+                  <Image src="/Antonio.jpg" alt="Antonio Chirieleison" width={112} height={144} className="w-full h-full object-cover object-top" />
                 </div>
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold">

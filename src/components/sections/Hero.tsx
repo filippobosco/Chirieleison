@@ -91,7 +91,7 @@ export function Hero() {
               {/* Foto */}
               <div className="relative aspect-[3/4] w-full">
                 <Image
-                  src="/founders.jpg"
+                  src="/hero.png"
                   alt="Antonio Chirieleison & Erik Vitali - Fondatori CV Wealth Partners"
                   fill
                   className="object-cover"
