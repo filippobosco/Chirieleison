@@ -17,11 +17,11 @@ export function Footer() {
             <div className="lg:col-span-1">
               <div className="mb-6">
                 <Image
-                  src="/chirieleison_logo.png"
+                  src="/logo bianco.png"
                   alt="CV Wealth Partners"
                   width={500}
                   height={135}
-                  className="h-28 w-auto brightness-0 invert"
+                  className="h-28 w-auto"
                 />
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
