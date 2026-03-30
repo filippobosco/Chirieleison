@@ -70,19 +70,29 @@ export function Footer() {
 
             {/* Certifications */}
             <div>
-              <h4 className="font-semibold text-lg mb-4">Certificazioni</h4>
+              <h4 className="font-semibold text-lg mb-4">Informazioni legali</h4>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 text-gray-400">
                   <Shield className="w-5 h-5 flex-shrink-0 mt-0.5 text-[var(--gold-400)]" />
-                  <span>Iscritti Albo OCF n. [numero]</span>
-                </li>
-                <li className="flex items-start gap-3 text-gray-400">
-                  <Scale className="w-5 h-5 flex-shrink-0 mt-0.5 text-[var(--gold-400)]" />
-                  <span>Consulenti Finanziari Autonomi</span>
+                  <div className="text-sm">
+                    <p className="font-medium text-gray-300">Antonio Chirieleison</p>
+                    <p>P.IVA: 13197700969</p>
+                    <p>Delibera OCF n. 2311 del 10/10/2023</p>
+                    <p>Albo dei Consulenti Finanziari abilitati all&apos;offerta fuori sede</p>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3 text-gray-400">
                   <Shield className="w-5 h-5 flex-shrink-0 mt-0.5 text-[var(--gold-400)]" />
-                  <span>Normativa MiFID II compliant</span>
+                  <div className="text-sm">
+                    <p className="font-medium text-gray-300">Erik Vitali</p>
+                    <p>P.IVA: 14198920960</p>
+                    <p>Iscrizione OCF n. 2705 del 14/04/2025</p>
+                    <p>Albo dei Consulenti Finanziari abilitati all&apos;offerta fuori sede</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3 text-gray-400">
+                  <Scale className="w-5 h-5 flex-shrink-0 mt-0.5 text-[var(--gold-400)]" />
+                  <span className="text-sm">Consulenti Finanziari abilitati all&apos;offerta fuori sede - Normativa MiFID II compliant</span>
                 </li>
               </ul>
             </div>
@@ -144,7 +154,7 @@ export function Footer() {
         <Container>
           <div className="py-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm text-center md:text-left">
-              © {currentYear} CV Wealth Partners. P.IVA [numero]. Tutti i
+              © {currentYear} CV Wealth Partners. Antonio Chirieleison P.IVA 13197700969 — Erik Vitali P.IVA 14198920960. Tutti i
               diritti riservati.
             </p>
           </div>

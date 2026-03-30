@@ -20,7 +20,7 @@ const faqs = [
   {
     question: "Siete abilitati e regolamentati?",
     answer:
-      "Assolutamente sì. Siamo iscritti all'Albo dei Consulenti Finanziari (OCF - Organismo di vigilanza e tenuta dell'albo unico dei Consulenti Finanziari) e operiamo nel pieno rispetto della normativa MiFID II. Antonio possiede inoltre la Certificazione EFPA ESG Advisor (European Financial Planning Association). Questo significa massima trasparenza, obblighi informativi stringenti e tutela totale del cliente.",
+      "Assolutamente sì. Siamo Consulenti Finanziari abilitati all'offerta fuori sede, iscritti all'Albo OCF (Organismo di vigilanza e tenuta dell'Albo unico dei Consulenti Finanziari). Antonio Chirieleison è iscritto con Delibera n. 2311 del 10/10/2023, Erik Vitali con Iscrizione n. 2705 del 14/04/2025. Operiamo per conto di un intermediario bancario autorizzato (banca mandante), nel pieno rispetto della normativa MiFID II. Antonio possiede inoltre la Certificazione EFPA ESG Advisor (European Financial Planning Association). Questo significa massima trasparenza, obblighi informativi stringenti e tutela totale del cliente.",
   },
   {
     question: "Cosa succede durante il primo incontro?",
