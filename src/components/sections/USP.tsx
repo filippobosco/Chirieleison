@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Shield, TrendingUp, Handshake } from "lucide-react";
+import { Shield, TrendingUp } from "lucide-react";
 
 const antonioPoints = [
   "Analisi degli impianti finanziari e fiscali delle scelte di investimento",
@@ -145,40 +145,6 @@ export function USP() {
           </motion.div>
         </div>
 
-        {/* Combined Box */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="bg-gradient-to-r from-[var(--gold-100)] to-[var(--gold-50)] rounded-3xl p-8 md:p-10 border border-[var(--gold-300)]"
-        >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Handshake className="w-8 h-8 text-[var(--navy-800)]" />
-            <h3 className="text-2xl md:text-3xl font-bold text-[var(--navy-950)]">
-              INSIEME = LA TUA SICUREZZA TOTALE
-            </h3>
-          </div>
-          <p className="text-lg md:text-xl text-[var(--navy-800)] text-center max-w-4xl mx-auto leading-relaxed">
-            Il nostro core business è la{" "}
-            <span className="font-semibold">
-              consulenza finanziaria e patrimoniale
-            </span>
-            : analizziamo il tuo patrimonio per individuare inefficienze e costruire strategie su misura.
-            <br />
-            <br />
-            In più, grazie alla nostra esperienza, sappiamo offrirti{" "}
-            <span className="font-semibold">spunti di ottimizzazione fiscale</span>{" "}
-            lavorando sempre 
-            in sinergia con il tuo commercialista e i tuoi consulenti di fiducia.
-            <br />
-            <br />
-            <span className="text-[var(--navy-900)] font-semibold">
-              Risultato: una visione integrata del tuo patrimonio, con strategie 
-              concrete per farlo crescere nel tempo.
-            </span>
-          </p>
-        </motion.div>
       </Container>
     </section>
   );
