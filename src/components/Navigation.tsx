@@ -73,7 +73,7 @@ export function Navigation() {
             <div className="flex items-center gap-2 md:gap-4">
               <a href="#prenota">
                 <Button size="sm" className="flex px-2 py-1.5 text-xs whitespace-nowrap">
-                  Prenota Check-up
+                  Richiedi Check-up
                 </Button>
               </a>
 
@@ -126,7 +126,7 @@ export function Navigation() {
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       <Button size="sm" className="w-full text-sm">
-                        Prenota il tuo Check-up Finanziario e Patrimoniale
+                        Richiedi il tuo Check-up gratuito
                       </Button>
                     </a>
                   </div>

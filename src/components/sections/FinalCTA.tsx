@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import {
@@ -13,11 +14,15 @@ import {
   ShieldCheck,
   Clock,
   AlertCircle,
+  ArrowRight,
 } from "lucide-react";
 
-const formSchema = z.object({
+const step1Schema = z.object({
   name: z.string().min(2, "Inserisci il tuo nome"),
   email: z.string().email("Inserisci un indirizzo email valido"),
+});
+
+const step2Schema = z.object({
   phone: z.string().min(10, "Inserisci un numero di telefono valido"),
   patrimony: z.string().min(1, "Seleziona una fascia patrimoniale"),
   message: z.string().optional(),
@@ -25,8 +30,6 @@ const formSchema = z.object({
     message: "Devi accettare la privacy policy",
   }),
 });
-
-type FormData = z.infer<typeof formSchema>;
 
 const benefits = [
   "Analisi preliminare del tuo patrimonio",
@@ -45,23 +48,33 @@ const patrimonyOptions = [
 
 export function FinalCTA() {
   const router = useRouter();
-
-  const now = new Date();
-  const currentMonth = now.toLocaleString("it-IT", { month: "long" });
-  const currentYear = now.getFullYear();
-  const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1).toLocaleString("it-IT", { month: "long" });
+  const [step, setStep] = useState<1 | 2>(1);
+  const [step1Data, setStep1Data] = useState<{ name: string; email: string } | null>(null);
 
   const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<FormData>({
-    resolver: zodResolver(formSchema),
+    register: registerStep1,
+    handleSubmit: handleStep1,
+    formState: { errors: errors1 },
+  } = useForm<z.infer<typeof step1Schema>>({
+    resolver: zodResolver(step1Schema),
   });
 
-  const onSubmit = async (data: FormData) => {
+  const {
+    register: registerStep2,
+    handleSubmit: handleStep2,
+    formState: { errors: errors2, isSubmitting },
+  } = useForm<z.infer<typeof step2Schema>>({
+    resolver: zodResolver(step2Schema),
+  });
+
+  const onStep1Submit = (data: z.infer<typeof step1Schema>) => {
+    setStep1Data(data);
+    setStep(2);
+  };
+
+  const onStep2Submit = async (data: z.infer<typeof step2Schema>) => {
+    if (!step1Data) return;
     try {
-      // Mappa i valori del patrimonio alle etichette corrette
       const patrimonyMap: Record<string, string> = {
         "50-250": "€50k - €250k",
         "250-500": "€250k - €500k",
@@ -70,31 +83,24 @@ export function FinalCTA() {
         "3m+": "Oltre €3M",
       };
 
-      // Invia i dati all'API
       const response = await fetch("/api/submit-form", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: data.name,
-          email: data.email,
+          name: step1Data.name,
+          email: step1Data.email,
           phone: data.phone,
           patrimony: patrimonyMap[data.patrimony] || data.patrimony,
           message: data.message || "",
         }),
       });
 
-      if (!response.ok) {
-        throw new Error("Errore nell'invio del form");
-      }
+      if (!response.ok) throw new Error("Errore nell'invio del form");
 
-      // Track conversion event for Meta Pixel
       if (typeof window !== "undefined" && (window as any).fbq) {
         (window as any).fbq("track", "Lead");
       }
 
-      // Redirect to thank you page
       router.push("/thank-you");
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -117,16 +123,12 @@ export function FinalCTA() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--navy-950)] mb-6">
-              Sei pronto a riprendere il controllo del tuo patrimonio?
+              Ottieni il tuo Check-up Finanziario gratuito in 40–60 minuti
             </h2>
 
-            <p className="text-xl md:text-2xl text-[var(--navy-800)] font-medium mb-6">
-              Prenota il tuo Check-up Finanziario e Patrimoniale{" "}
-            </p>
-
             <p className="text-[var(--navy-700)] mb-6">
-              40-60 minuti dedicati a capire la tua situazione e a identificare
-              le aree di miglioramento più urgenti.
+              Analizziamo la tua situazione patrimoniale, identifichiamo le inefficienze
+              e ti mostriamo un percorso concreto. Senza impegno, senza pressione commerciale.
             </p>
 
             <ul className="space-y-3 mb-8">
@@ -153,8 +155,7 @@ export function FinalCTA() {
                 </div>
                 <p className="text-[var(--navy-800)] text-sm">
                   Accettiamo massimo 5 nuovi clienti al mese per garantire il
-                  nostro standard di servizio. I posti disponibili per {currentMonth}{" "}
-                  {currentYear} sono già al 60%. Prenota ora per non aspettare {nextMonth}.
+                  nostro standard di servizio. Contattaci per verificare la disponibilità attuale.
                 </p>
               </div>
 
@@ -166,10 +167,22 @@ export function FinalCTA() {
                   </span>
                 </div>
                 <p className="text-[var(--navy-800)] text-sm">
-                  Il primo incontro è completamente gratuito e senza alcun obbligo. 
-                  Il nostro obiettivo è comprendere la tua situazione e valutare 
+                  Il primo incontro è completamente gratuito e senza alcun obbligo.
+                  Il nostro obiettivo è comprendere la tua situazione e valutare
                   insieme se possiamo esserti utili. Nessuna pressione commerciale.
                 </p>
+              </div>
+            </div>
+
+            {/* Badge fiducia */}
+            <div className="flex flex-wrap gap-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--navy-950)]/10 border border-[var(--navy-950)]/20">
+                <ShieldCheck className="w-4 h-4 text-[var(--navy-950)]" />
+                <span className="text-xs font-semibold text-[var(--navy-950)]">Consulenti abilitati MiFID II</span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--navy-950)]/10 border border-[var(--navy-950)]/20">
+                <Phone className="w-4 h-4 text-[var(--navy-950)]" />
+                <span className="text-xs font-semibold text-[var(--navy-950)]">Offerta fuori sede abilitata</span>
               </div>
             </div>
           </motion.div>
@@ -181,171 +194,186 @@ export function FinalCTA() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <form
-              onSubmit={handleSubmit(onSubmit)}
-              className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl"
-            >
-                <h3 className="text-2xl font-bold text-[var(--navy-950)] mb-6">
-                  Prenota il tuo Check-up Finanziario e Patrimoniale
-                </h3>
-
-                <div className="space-y-5">
-                  {/* Name */}
-                  <div>
-                    <label
-                      htmlFor="booking-name"
-                      className="block text-sm font-medium text-[var(--navy-800)] mb-2"
-                    >
-                      Nome e Cognome *
-                    </label>
-                    <input
-                      {...register("name")}
-                      type="text"
-                      id="booking-name"
-                      placeholder="Il tuo nome completo"
-                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all text-[var(--navy-950)]"
-                    />
-                    {errors.name && (
-                      <p className="mt-1 text-sm text-[var(--error)] flex items-center gap-1">
-                        <AlertCircle className="w-4 h-4" />
-                        {errors.name.message}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Email */}
-                  <div>
-                    <label
-                      htmlFor="booking-email"
-                      className="block text-sm font-medium text-[var(--navy-800)] mb-2"
-                    >
-                      Email *
-                    </label>
-                    <input
-                      {...register("email")}
-                      type="email"
-                      id="booking-email"
-                      placeholder="la.tua@email.com"
-                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all text-[var(--navy-950)]"
-                    />
-                    {errors.email && (
-                      <p className="mt-1 text-sm text-[var(--error)] flex items-center gap-1">
-                        <AlertCircle className="w-4 h-4" />
-                        {errors.email.message}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Phone */}
-                  <div>
-                    <label
-                      htmlFor="booking-phone"
-                      className="block text-sm font-medium text-[var(--navy-800)] mb-2"
-                    >
-                      Telefono *
-                    </label>
-                    <input
-                      {...register("phone")}
-                      type="tel"
-                      id="booking-phone"
-                      placeholder="+39 xxx xxx xxxx"
-                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all text-[var(--navy-950)]"
-                    />
-                    {errors.phone && (
-                      <p className="mt-1 text-sm text-[var(--error)] flex items-center gap-1">
-                        <AlertCircle className="w-4 h-4" />
-                        {errors.phone.message}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Patrimony */}
-                  <div>
-                    <label
-                      htmlFor="patrimony"
-                      className="block text-sm font-medium text-[var(--navy-800)] mb-2"
-                    >
-                      Patrimonio investibile *
-                    </label>
-                    <select
-                      {...register("patrimony")}
-                      id="patrimony"
-                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all bg-white text-[var(--navy-950)]"
-                    >
-                      <option value="">Seleziona una fascia</option>
-                      {patrimonyOptions.map((option) => (
-                        <option key={option.value} value={option.value}>
-                          {option.label}
-                        </option>
-                      ))}
-                    </select>
-                    {errors.patrimony && (
-                      <p className="mt-1 text-sm text-[var(--error)] flex items-center gap-1">
-                        <AlertCircle className="w-4 h-4" />
-                        {errors.patrimony.message}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* Message */}
-                  <div>
-                    <label
-                      htmlFor="message"
-                      className="block text-sm font-medium text-[var(--navy-800)] mb-2"
-                    >
-                      Raccontaci brevemente la tua situazione (opzionale)
-                    </label>
-                    <textarea
-                      {...register("message")}
-                      id="message"
-                      rows={3}
-                      placeholder="Cosa vorresti migliorare nella gestione del tuo patrimonio?"
-                      className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all resize-none text-[var(--navy-950)]"
-                    />
-                  </div>
-
-                  {/* Privacy */}
-                  <div className="flex items-start gap-3">
-                    <input
-                      {...register("privacy")}
-                      type="checkbox"
-                      id="booking-privacy"
-                      className="mt-1 w-5 h-5 rounded border-[var(--gray-300)] text-[var(--gold-500)] focus:ring-[var(--gold-500)]"
-                    />
-                    <label
-                      htmlFor="booking-privacy"
-                      className="text-sm text-[var(--gray-600)]"
-                    >
-                      Accetto la{" "}
-                      <a
-                        href="/privacy"
-                        className="text-[var(--navy-700)] font-semibold hover:underline"
-                      >
-                        Privacy Policy
-                      </a>{" "}
-                      e acconsento al trattamento dei miei dati. *
-                    </label>
-                  </div>
-                  {errors.privacy && (
-                    <p className="text-sm text-[var(--error)] flex items-center gap-1">
-                      <AlertCircle className="w-4 h-4" />
-                      {errors.privacy.message}
-                    </p>
-                  )}
-
-                  {/* Submit */}
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting
-                      ? "Invio in corso..."
-                      : "Prenota il tuo Check Up"}
-                  </Button>
+            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl">
+              {/* Step indicator */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-colors ${step === 1 ? "bg-[var(--navy-950)] text-white" : "bg-[var(--gold-400)] text-[var(--navy-950)]"}`}>
+                  {step === 1 ? "1" : <Check className="w-4 h-4" />}
                 </div>
-              </form>
+                <div className="flex-1 h-0.5 bg-[var(--gray-200)]">
+                  <div className={`h-full bg-[var(--gold-400)] transition-all duration-500 ${step === 2 ? "w-full" : "w-0"}`} />
+                </div>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-colors ${step === 2 ? "bg-[var(--navy-950)] text-white" : "bg-[var(--gray-200)] text-[var(--gray-500)]"}`}>
+                  2
+                </div>
+              </div>
+
+              {step === 1 && (
+                <>
+                  <h3 className="text-2xl font-bold text-[var(--navy-950)] mb-2">
+                    Richiedi il tuo Check-up gratuito
+                  </h3>
+                  <p className="text-sm text-[var(--gray-500)] mb-6">Passo 1 di 2 — Dati di contatto</p>
+
+                  <form onSubmit={handleStep1(onStep1Submit)} className="space-y-5">
+                    <div>
+                      <label htmlFor="booking-name" className="block text-sm font-medium text-[var(--navy-800)] mb-2">
+                        Nome e Cognome *
+                      </label>
+                      <input
+                        {...registerStep1("name")}
+                        type="text"
+                        id="booking-name"
+                        placeholder="Il tuo nome completo"
+                        className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all text-[var(--navy-950)]"
+                      />
+                      {errors1.name && (
+                        <p className="mt-1 text-sm text-[var(--error)] flex items-center gap-1">
+                          <AlertCircle className="w-4 h-4" />
+                          {errors1.name.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <div>
+                      <label htmlFor="booking-email" className="block text-sm font-medium text-[var(--navy-800)] mb-2">
+                        Email *
+                      </label>
+                      <input
+                        {...registerStep1("email")}
+                        type="email"
+                        id="booking-email"
+                        placeholder="la.tua@email.com"
+                        className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all text-[var(--navy-950)]"
+                      />
+                      {errors1.email && (
+                        <p className="mt-1 text-sm text-[var(--error)] flex items-center gap-1">
+                          <AlertCircle className="w-4 h-4" />
+                          {errors1.email.message}
+                        </p>
+                      )}
+                    </div>
+
+                    <Button type="submit" size="lg" className="w-full">
+                      Continua <ArrowRight className="w-4 h-4 ml-2 inline" />
+                    </Button>
+                  </form>
+                </>
+              )}
+
+              {step === 2 && (
+                <>
+                  <h3 className="text-2xl font-bold text-[var(--navy-950)] mb-2">
+                    Un ultimo passo
+                  </h3>
+                  <p className="text-sm text-[var(--gray-500)] mb-6">Passo 2 di 2 — Completa la richiesta</p>
+
+                  <form onSubmit={handleStep2(onStep2Submit)} className="space-y-5">
+                    <div>
+                      <label htmlFor="booking-phone" className="block text-sm font-medium text-[var(--navy-800)] mb-2">
+                        Telefono *
+                      </label>
+                      <input
+                        {...registerStep2("phone")}
+                        type="tel"
+                        id="booking-phone"
+                        placeholder="+39 xxx xxx xxxx"
+                        className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all text-[var(--navy-950)]"
+                      />
+                      {errors2.phone && (
+                        <p className="mt-1 text-sm text-[var(--error)] flex items-center gap-1">
+                          <AlertCircle className="w-4 h-4" />
+                          {errors2.phone.message}
+                        </p>
+                      )}
+                      <p className="mt-1.5 text-xs text-[var(--gray-500)]">
+                        Usato solo per fissare il tuo appuntamento. Non riceverai chiamate commerciali.
+                      </p>
+                    </div>
+
+                    <div>
+                      <label htmlFor="patrimony" className="block text-sm font-medium text-[var(--navy-800)] mb-2">
+                        Patrimonio investibile *
+                      </label>
+                      <select
+                        {...registerStep2("patrimony")}
+                        id="patrimony"
+                        className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all bg-white text-[var(--navy-950)]"
+                      >
+                        <option value="">Seleziona una fascia</option>
+                        {patrimonyOptions.map((option) => (
+                          <option key={option.value} value={option.value}>
+                            {option.label}
+                          </option>
+                        ))}
+                      </select>
+                      {errors2.patrimony && (
+                        <p className="mt-1 text-sm text-[var(--error)] flex items-center gap-1">
+                          <AlertCircle className="w-4 h-4" />
+                          {errors2.patrimony.message}
+                        </p>
+                      )}
+                      <p className="mt-1.5 text-xs text-[var(--gray-500)]">
+                        Ci aiuta a prepararci al meglio per il tuo check-up. I dati sono trattati con massima riservatezza.
+                      </p>
+                    </div>
+
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-[var(--navy-800)] mb-2">
+                        Raccontaci brevemente la tua situazione (opzionale)
+                      </label>
+                      <textarea
+                        {...registerStep2("message")}
+                        id="message"
+                        rows={3}
+                        placeholder="Cosa vorresti migliorare nella gestione del tuo patrimonio?"
+                        className="w-full px-4 py-3 rounded-xl border border-[var(--gray-300)] focus:border-[var(--gold-500)] focus:ring-2 focus:ring-[var(--gold-500)]/20 outline-none transition-all resize-none text-[var(--navy-950)]"
+                      />
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <input
+                        {...registerStep2("privacy")}
+                        type="checkbox"
+                        id="booking-privacy"
+                        className="mt-1 w-5 h-5 rounded border-[var(--gray-300)] text-[var(--gold-500)] focus:ring-[var(--gold-500)]"
+                      />
+                      <label htmlFor="booking-privacy" className="text-sm text-[var(--gray-600)]">
+                        Accetto la{" "}
+                        <a href="/privacy" className="text-[var(--navy-700)] font-semibold hover:underline">
+                          Privacy Policy
+                        </a>{" "}
+                        e acconsento al trattamento dei miei dati. *
+                      </label>
+                    </div>
+                    {errors2.privacy && (
+                      <p className="text-sm text-[var(--error)] flex items-center gap-1">
+                        <AlertCircle className="w-4 h-4" />
+                        {errors2.privacy.message}
+                      </p>
+                    )}
+
+                    <div className="flex gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setStep(1)}
+                        className="px-4 py-3 rounded-xl border border-[var(--gray-300)] text-[var(--navy-800)] text-sm font-medium hover:border-[var(--gray-400)] transition-colors"
+                      >
+                        Indietro
+                      </button>
+                      <Button
+                        type="submit"
+                        size="lg"
+                        className="flex-1"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? "Invio in corso..." : "Ottieni il tuo Check-up gratuito"}
+                      </Button>
+                    </div>
+                  </form>
+                </>
+              )}
+            </div>
           </motion.div>
         </div>
       </Container>

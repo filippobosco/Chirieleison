@@ -45,32 +45,35 @@ export function Hero() {
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
-              Il tuo patrimonio merita un consulente{" "}
-              <span className="text-gradient">che faccia davvero il tuo interesse</span>
+              Check-up patrimoniale{" "}
+              <span className="text-gradient">gratuito in 40–60 minuti</span>
             </h1>
 
             <p className="text-xl text-gray-300 mb-4 leading-relaxed">
-              <span className="text-white font-semibold">Doppia garanzia</span>:
-              l&apos;esperienza di chi segue ogni giorno oltre 150 clienti fidelizzati
-              con strategie finanziarie personalizzate e massima attenzione alla
-              pianificazione fiscale e successoria.
+              Scopri inefficienze fiscali e opportunità nascoste nel tuo patrimonio.
+              Senza impegno, senza vendita di prodotti.
             </p>
 
             <p className="text-lg text-gray-400 mb-8">
-              CV Wealth Partners non vende prodotti finanziari. Costruisce
-              strategie patrimoniali su misura per imprenditori e famiglie che
-              vogliono protezione reale, chiarezza totale e un partner che resta
-              nel tempo.
+              CV Wealth Partners — consulenti abilitati MiFID II con 19 anni di
+              esperienza in private banking e background da Guardia di Finanza.
+              Il tuo interesse, prima di tutto.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               <a href="#prenota" className="inline-block">
                 <Button size="lg" className="btn-glow text-lg">
-                  Prenota il tuo Check-up Finanziario e Patrimoniale
+                  Richiedi il tuo Check-up gratuito
                 </Button>
               </a>
             </div>
 
+            <div className="flex items-center gap-2 mb-2">
+              <Shield className="w-4 h-4 text-[var(--gold-400)]" />
+              <p className="text-sm text-gray-400">
+                Consulenti abilitati all&apos;offerta fuori sede · MiFID II compliant
+              </p>
+            </div>
             <p className="text-sm text-gray-500">
               Senza impegno – Massima riservatezza
             </p>
