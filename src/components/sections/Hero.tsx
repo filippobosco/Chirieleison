@@ -26,12 +26,8 @@ export function Hero() {
 
       <Container size="xl" className="relative z-10 py-20 md:py-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          {/* Content — no entrance animation on primary content */}
+          <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -77,7 +73,7 @@ export function Hero() {
             <p className="text-sm text-gray-500">
               Senza impegno – Massima riservatezza
             </p>
-          </motion.div>
+          </div>
 
           {/* Founders Card */}
           <motion.div
@@ -94,12 +90,15 @@ export function Hero() {
               {/* Foto */}
               <div className="relative aspect-[3/4] w-full">
                 <Image
-                  src="/hero.png"
+                  src="/hero.webp"
                   alt="Antonio Chirieleison & Erik Vitali - Fondatori CV Wealth Partners"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                   style={{ objectPosition: "center 25%" }}
                   priority
+                  fetchPriority="high"
+                  loading="eager"
                 />
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--navy-950)]" />

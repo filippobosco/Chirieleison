@@ -26,10 +26,10 @@ export default function Home() {
       <section id="risultati">
         <CaseStudies />
       </section>
+      <FinalCTA />
       <section id="faq">
         <FAQ />
       </section>
-      <FinalCTA />
       <Footer />
       <StickyMobileCTA />
     </main>
