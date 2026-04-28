@@ -93,7 +93,7 @@ export function Hero() {
                   src="/hero.webp"
                   alt="Antonio Chirieleison & Erik Vitali - Fondatori CV Wealth Partners"
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 90vw, 45vw"
                   className="object-cover"
                   style={{ objectPosition: "center 25%" }}
                   priority
