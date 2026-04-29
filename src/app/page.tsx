@@ -6,6 +6,7 @@ import { USP } from "@/components/sections/USP";
 import { Method } from "@/components/sections/Method";
 import { CaseStudies } from "@/components/sections/CaseStudies";
 import { FAQ } from "@/components/sections/FAQ";
+import { MidCTA } from "@/components/sections/MidCTA";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Footer } from "@/components/sections/Footer";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <PainPoints />
+      <MidCTA />
       <section id="chi-siamo">
         <USP />
       </section>
