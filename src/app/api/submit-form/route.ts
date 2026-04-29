@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
 
     // Validazione base
-    if (!body.name || !body.email || !body.phone || !body.patrimony) {
+    if (!body.name || !body.email || !body.phone) {
       return NextResponse.json(
         { error: "Campi obbligatori mancanti" },
         { status: 400 }
