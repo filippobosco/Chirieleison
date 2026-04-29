@@ -23,7 +23,7 @@ const step1Schema = z.object({
 });
 
 const step2Schema = z.object({
-  phone: z.string().min(10, "Inserisci un numero di telefono valido"),
+  phone: z.string().min(6, "Inserisci un numero di telefono valido"),
   patrimony: z.string().min(1, "Seleziona una fascia patrimoniale"),
   message: z.string().optional(),
   privacy: z.boolean().refine((val) => val === true, {
