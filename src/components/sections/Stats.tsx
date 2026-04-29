@@ -68,12 +68,14 @@ export function Stats() {
           className="text-center mb-12 md:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--navy-950)] mb-6">
-            Un progetto nuovo, per chi cerca qualcosa di diverso
+            Due professionisti. Un approccio diverso dalla consulenza tradizionale.
           </h2>
           <p className="text-lg md:text-xl text-[var(--gray-600)] max-w-3xl mx-auto leading-relaxed">
-            CV Wealth Partners è un team appena nato per scelta, non per caso.
-            Nasce dalla convinzione che la consulenza finanziaria e patrimoniale possa essere
-            fatta in modo diverso: più vicino, più trasparente, più umano.
+            CV Wealth Partners nasce da una scelta precisa: portare nella consulenza
+            finanziaria e patrimoniale privata lo stesso rigore che Erik ha maturato
+            in 19 anni di private banking e Antonio nella Guardia di Finanza.
+            Una consulenza più vicina, più trasparente e realmente orientata
+            al tuo interesse.
           </p>
         </motion.div>
 
